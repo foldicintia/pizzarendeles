@@ -355,7 +355,7 @@ public class Pizza extends javax.swing.JFrame {
     }//GEN-LAST:event_ckbOlivaActionPerformed
 
     private void btRendelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRendelActionPerformed
-      JOptionPane.showMessageDialog(null, "Ez egy teszt!", "Cim", 2);
+     
       
       boolean valasztottPizzaSonka = rbtSonkas.isSelected();
       boolean valasztottPizzaMargarita = rbtMargarita.isSelected();
