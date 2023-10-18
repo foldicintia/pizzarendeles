@@ -42,8 +42,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Component id="pnlLablec" pref="510" max="32767" attributes="0"/>
+          <Component id="pnlFejlec" alignment="1" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlPizza" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="pnlExtra" min="-2" max="-2" attributes="0"/>
@@ -52,10 +54,8 @@
                   <Component id="pnlMeretek" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="pnlTeszta" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="7" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
-          <Component id="pnlLablec" pref="0" max="32767" attributes="0"/>
-          <Component id="pnlFejlec" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -63,17 +63,17 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlFejlec" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="pnlExtra" alignment="0" max="32767" attributes="0"/>
-                  <Component id="pnlPizza" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pnlPizza" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="pnlMeretek" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="pnlTeszta" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
               <Component id="pnlLablec" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -107,9 +107,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="lblKep" alignment="1" pref="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="76" max="32767" attributes="0"/>
-                  <Component id="lblCim" min="-2" pref="58" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                  <Component id="lblCim" min="-2" pref="64" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -129,7 +128,7 @@
         <Component class="javax.swing.JLabel" name="lblKep">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\foldi\Documents\A_szoftver\Java\PizzaRendeles\pizzajo2.png"/>
+              <Image iconType="2" name="C:\Users\F&#xf6;ldiCintiaVivien(SZ\Documents\pizzarendeles\src\kepek\pizzajo2.png"/>
             </Property>
           </Properties>
         </Component>
@@ -498,6 +497,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Vissza"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVisszaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btRendel">
           <Properties>

@@ -72,7 +72,7 @@ public class Pizza extends javax.swing.JFrame {
         lblCim.setFont(new java.awt.Font("Stencil", 1, 36)); // NOI18N
         lblCim.setText("ZHome Pizza");
 
-        lblKep.setIcon(new javax.swing.ImageIcon("C:\\Users\\foldi\\Documents\\A_szoftver\\Java\\PizzaRendeles\\pizzajo2.png")); // NOI18N
+        lblKep.setIcon(new javax.swing.ImageIcon("C:\\Users\\FöldiCintiaVivien(SZ\\Documents\\pizzarendeles\\src\\kepek\\pizzajo2.png")); // NOI18N
 
         javax.swing.GroupLayout pnlFejlecLayout = new javax.swing.GroupLayout(pnlFejlec);
         pnlFejlec.setLayout(pnlFejlecLayout);
@@ -89,9 +89,8 @@ public class Pizza extends javax.swing.JFrame {
             pnlFejlecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblKep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFejlecLayout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
-                .addComponent(lblCim, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(82, 82, 82)
+                .addComponent(lblCim, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pnlPizza.setBackground(new java.awt.Color(255, 204, 153));
@@ -275,6 +274,11 @@ public class Pizza extends javax.swing.JFrame {
         pnlLablec.setMinimumSize(new java.awt.Dimension(530, 400));
 
         btVissza.setText("Vissza");
+        btVissza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVisszaActionPerformed(evt);
+            }
+        });
 
         btRendel.setText("Rendel");
         btRendel.addActionListener(new java.awt.event.ActionListener() {
@@ -308,8 +312,10 @@ public class Pizza extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlLablec, javax.swing.GroupLayout.PREFERRED_SIZE, 510, Short.MAX_VALUE)
+            .addComponent(pnlFejlec, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(pnlPizza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(pnlExtra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -317,24 +323,22 @@ public class Pizza extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlMeretek, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pnlTeszta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(7, Short.MAX_VALUE))
-            .addComponent(pnlLablec, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(pnlFejlec, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlFejlec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(pnlExtra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlPizza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlPizza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pnlMeretek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(pnlTeszta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(pnlLablec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -351,6 +355,8 @@ public class Pizza extends javax.swing.JFrame {
     }//GEN-LAST:event_ckbOlivaActionPerformed
 
     private void btRendelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRendelActionPerformed
+      JOptionPane.showMessageDialog(null, "Ez egy teszt!");
+      
       boolean valasztottPizzaSonka = rbtSonkas.isSelected();
       boolean valasztottPizzaMargarita = rbtMargarita.isSelected();
       boolean valasztottPizzaHawaii = rbtHawaii.isSelected();
@@ -396,6 +402,10 @@ public class Pizza extends javax.swing.JFrame {
         String orderSummary = valasztottPizza + valasztottExtra + valasztottTeszta + valasztottMeret;
         JOptionPane.showMessageDialog(null, orderSummary);
     }//GEN-LAST:event_btRendelActionPerformed
+
+    private void btVisszaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisszaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btVisszaActionPerformed
 
     /**
      * @param args the command line arguments
