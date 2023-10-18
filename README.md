@@ -1,2 +1,2 @@
-# pizzarendeles
-Github-on létrehozva: Földi Cintia
+## pizzarendeles
+#Github-on létrehozva: **Földi Cintia**
