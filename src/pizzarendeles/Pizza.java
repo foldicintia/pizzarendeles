@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author foldi
  */
 public class Pizza extends javax.swing.JFrame {
-
+ 
     /**
      * Creates new form Pizza
      */
@@ -155,6 +155,7 @@ public class Pizza extends javax.swing.JFrame {
         );
 
         pnlMeretek.setBackground(new java.awt.Color(255, 204, 153));
+        pnlMeretek.setPreferredSize(new java.awt.Dimension(175, 75));
 
         lblMeretek.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         lblMeretek.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -237,10 +238,11 @@ public class Pizza extends javax.swing.JFrame {
                 .addComponent(ckbGomba)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ckbSajt)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         pnlTeszta.setBackground(new java.awt.Color(255, 204, 153));
+        pnlTeszta.setPreferredSize(new java.awt.Dimension(175, 75));
 
         lblTeszta.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         lblTeszta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -325,27 +327,38 @@ public class Pizza extends javax.swing.JFrame {
                     .addComponent(pnlTeszta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {pnlExtra, pnlPizza});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {pnlMeretek, pnlTeszta});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlFejlec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(pnlExtra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(pnlPizza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pnlMeretek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(pnlTeszta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                    .addComponent(pnlExtra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlLablec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(187, 187, 187)
+                .addComponent(pnlMeretek, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(pnlTeszta, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {pnlExtra, pnlPizza});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {pnlMeretek, pnlTeszta});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void rbtMargaritaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMargaritaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtMargaritaActionPerformed
@@ -361,12 +374,15 @@ public class Pizza extends javax.swing.JFrame {
       boolean valasztottPizzaMargarita = rbtMargarita.isSelected();
       boolean valasztottPizzaHawaii = rbtHawaii.isSelected();
       boolean valasztottPizzaSzalami = rbtSzalami.isSelected();
+      boolean valasztottPizzaNull = buttonGroup1.getSelection()== null;
+      
       
 
       String valasztottPizza = "";
       String valasztottExtra = "";
       String valasztottMeret = "";
       String valasztottTeszta = "";
+      
         
         if (valasztottPizzaHawaii) {
             valasztottPizza = "Választottt pizza: Hawaii\n";
@@ -380,31 +396,31 @@ public class Pizza extends javax.swing.JFrame {
         if (valasztottPizzaSzalami) {
             valasztottPizza = "Választott pizza: Szalámis\n";
         }
-        else {
-             JOptionPane.showMessageDialog(this, "Nincs kiválasztva pizza! Válasszon!", "Hiba", JOptionPane.CANCEL_OPTION);
+        else if (valasztottPizzaNull){
+            JOptionPane.showMessageDialog(null, "Nincs kiválasztva pizza! Válasszon!", "Hiba", JOptionPane.CANCEL_OPTION);
         }
         
         if (ckbGomba.isSelected()) {
-            valasztottExtra = "Választott extra: gomba\n";
+            valasztottExtra += "gomba, ";
         }
         if (ckbKukorica.isSelected()) {
-            valasztottExtra = "Választott extra: kukorica\n";
+            valasztottExtra += "kukorica, ";
         }
         if (ckbOliva.isSelected()) {
-            valasztottExtra = "Választott extra: Oliva\n";
+            valasztottExtra += "oliva, ";
         }
         if (ckbSajt.isSelected()) {
-            valasztottExtra = "Választott extra: sajt\n";
+            valasztottExtra += "sajt, ";
         }
         
         valasztottMeret = "Választott méret:" + cmbMeretek.getSelectedItem() + "\n";
         valasztottTeszta = "Választott tészta:" + cmbTeszta.getSelectedItem() + "\n";
-        String orderSummary = valasztottPizza + valasztottExtra + valasztottTeszta + valasztottMeret;
-        JOptionPane.showMessageDialog(null, orderSummary);
+        String rendeles = valasztottPizza + "Választott extra:" + valasztottExtra + "\n" + valasztottTeszta + valasztottMeret;
+        JOptionPane.showMessageDialog(null, rendeles, "Rendelés összegzése",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btRendelActionPerformed
 
     private void btVisszaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisszaActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_btVisszaActionPerformed
 
     /**
